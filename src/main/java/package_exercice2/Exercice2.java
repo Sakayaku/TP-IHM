@@ -4,6 +4,8 @@
  */
 package package_exercice2;
 
+import javax.swing.ListModel;
+
 /**
  *
  * @author FRS4440A
@@ -26,37 +28,40 @@ public class Exercice2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        FileChooser = new javax.swing.JFileChooser();
         PanelFichier = new javax.swing.JPanel();
         BoutonParcourir = new javax.swing.JButton();
         LabelFichier = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        PanelNomFichier = new javax.swing.JScrollPane();
         TextAreaNomFichier = new javax.swing.JTextArea();
         PanelOptions = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jSpinner1 = new javax.swing.JSpinner();
-        jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel2 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jPanel3 = new javax.swing.JPanel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jLabel3 = new javax.swing.JLabel();
+        PanelOptionsGauche = new javax.swing.JPanel();
+        SpinnerNombreCopies = new javax.swing.JSpinner();
+        LabelNombreCopies = new javax.swing.JLabel();
+        ComboBoxFormat = new javax.swing.JComboBox<>();
+        LabelFormat = new javax.swing.JLabel();
+        CheckBoxRectoVerso = new javax.swing.JCheckBox();
+        PanelOptionDroit = new javax.swing.JPanel();
+        RadioBoutonNoirBlanc = new javax.swing.JRadioButton();
+        RadioBoutonCouleur = new javax.swing.JRadioButton();
+        ComboBoxQualite = new javax.swing.JComboBox<>();
+        LabelQualitéPapier = new javax.swing.JLabel();
         PanelPlanification = new javax.swing.JPanel();
         BoutonAjouter = new javax.swing.JButton();
-        BouonModifier = new javax.swing.JButton();
+        BoutonModifier = new javax.swing.JButton();
         BoutonSupprimer = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        ListImpressionPlanifiees = new javax.swing.JList<>();
         PanelPrix = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        TestFieldPrix = new javax.swing.JTextField();
+
+        FileChooser.setDialogTitle("Fichier à imprimer");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gestion impressions");
         setName("Gestion impressions"); // NOI18N
 
-        PanelFichier.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(null), "Fichier à imprimer"));
+        PanelFichier.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Fichier à imprimer"));
 
         BoutonParcourir.setText("Parcourir...");
         BoutonParcourir.addActionListener(new java.awt.event.ActionListener() {
@@ -67,14 +72,16 @@ public class Exercice2 extends javax.swing.JFrame {
 
         LabelFichier.setText("Nom du fichier :");
 
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        PanelNomFichier.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        PanelNomFichier.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         TextAreaNomFichier.setEditable(false);
         TextAreaNomFichier.setColumns(20);
         TextAreaNomFichier.setRows(5);
         TextAreaNomFichier.setAutoscrolls(false);
-        jScrollPane1.setViewportView(TextAreaNomFichier);
+        TextAreaNomFichier.setEnabled(false);
+        TextAreaNomFichier.setFocusable(false);
+        PanelNomFichier.setViewportView(TextAreaNomFichier);
 
         javax.swing.GroupLayout PanelFichierLayout = new javax.swing.GroupLayout(PanelFichier);
         PanelFichier.setLayout(PanelFichierLayout);
@@ -84,7 +91,7 @@ public class Exercice2 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(LabelFichier, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1)
+                .addComponent(PanelNomFichier, javax.swing.GroupLayout.DEFAULT_SIZE, 305, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BoutonParcourir)
                 .addContainerGap())
@@ -98,114 +105,125 @@ public class Exercice2 extends javax.swing.JFrame {
                     .addComponent(BoutonParcourir))
                 .addContainerGap(8, Short.MAX_VALUE))
             .addGroup(PanelFichierLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addComponent(PanelNomFichier, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        PanelOptions.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(null), "Options d'impression"));
+        PanelOptions.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Options d'impression"));
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        PanelOptionsGauche.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel1.setText("Nb de copies");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A3", "A4", "A5", "A6" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+        SpinnerNombreCopies.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                SpinnerNombreCopiesStateChanged(evt);
             }
         });
 
-        jLabel2.setText("Format");
+        LabelNombreCopies.setText("Nb de copies");
 
-        jCheckBox1.setText("Recto/Verso");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        ComboBoxFormat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A3", "A4", "A5", "A6" }));
+        ComboBoxFormat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                ComboBoxFormatActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        LabelFormat.setText("Format");
+
+        CheckBoxRectoVerso.setText("Recto/Verso");
+        CheckBoxRectoVerso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CheckBoxRectoVersoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PanelOptionsGaucheLayout = new javax.swing.GroupLayout(PanelOptionsGauche);
+        PanelOptionsGauche.setLayout(PanelOptionsGaucheLayout);
+        PanelOptionsGaucheLayout.setHorizontalGroup(
+            PanelOptionsGaucheLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelOptionsGaucheLayout.createSequentialGroup()
                 .addGap(39, 39, 39)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox1)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
+                .addGroup(PanelOptionsGaucheLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(CheckBoxRectoVerso)
+                    .addGroup(PanelOptionsGaucheLayout.createSequentialGroup()
+                        .addGroup(PanelOptionsGaucheLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LabelNombreCopies)
+                            .addComponent(LabelFormat))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(PanelOptionsGaucheLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(SpinnerNombreCopies, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ComboBoxFormat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        PanelOptionsGaucheLayout.setVerticalGroup(
+            PanelOptionsGaucheLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelOptionsGaucheLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PanelOptionsGaucheLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelNombreCopies)
+                    .addComponent(SpinnerNombreCopies, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PanelOptionsGaucheLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelFormat)
+                    .addComponent(ComboBoxFormat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox1)
+                .addComponent(CheckBoxRectoVerso)
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        PanelOptionDroit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jRadioButton1.setText("Noir et Blanc");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        RadioBoutonNoirBlanc.setText("Noir et Blanc");
+        RadioBoutonNoirBlanc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                RadioBoutonNoirBlancActionPerformed(evt);
             }
         });
 
-        jRadioButton2.setText("Couleur");
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Economique", "Couché", "Supérieure", "Texturé", "Recyclé", "Spéciaux" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        RadioBoutonCouleur.setText("Couleur");
+        RadioBoutonCouleur.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                RadioBoutonCouleurActionPerformed(evt);
             }
         });
 
-        jLabel3.setText("Qualité du papier");
+        ComboBoxQualite.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Economique", "Couché", "Supérieure", "Texturé", "Recyclé", "Spéciaux" }));
+        ComboBoxQualite.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboBoxQualiteActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        LabelQualitéPapier.setText("Qualité du papier");
+
+        javax.swing.GroupLayout PanelOptionDroitLayout = new javax.swing.GroupLayout(PanelOptionDroit);
+        PanelOptionDroit.setLayout(PanelOptionDroitLayout);
+        PanelOptionDroitLayout.setHorizontalGroup(
+            PanelOptionDroitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelOptionDroitLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton1))
+                .addGroup(PanelOptionDroitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(RadioBoutonCouleur)
+                    .addComponent(RadioBoutonNoirBlanc))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelOptionDroitLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3)
+                .addComponent(LabelQualitéPapier)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ComboBoxQualite, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(75, 75, 75))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        PanelOptionDroitLayout.setVerticalGroup(
+            PanelOptionDroitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelOptionDroitLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jRadioButton1)
+                .addComponent(RadioBoutonNoirBlanc)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton2)
+                .addComponent(RadioBoutonCouleur)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(PanelOptionDroitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ComboBoxQualite, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelQualitéPapier, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -215,9 +233,9 @@ public class Exercice2 extends javax.swing.JFrame {
             PanelOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelOptionsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PanelOptionsGauche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PanelOptionDroit, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(9, Short.MAX_VALUE))
         );
         PanelOptionsLayout.setVerticalGroup(
@@ -225,12 +243,12 @@ public class Exercice2 extends javax.swing.JFrame {
             .addGroup(PanelOptionsLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PanelOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(PanelOptionDroit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelOptionsGauche, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
-        PanelPlanification.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(null), "Impressions planifiées"));
+        PanelPlanification.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Impressions planifiées"));
 
         BoutonAjouter.setText("Ajouter");
         BoutonAjouter.setEnabled(false);
@@ -240,15 +258,24 @@ public class Exercice2 extends javax.swing.JFrame {
             }
         });
 
-        BouonModifier.setText("Modifier");
-        BouonModifier.setEnabled(false);
+        BoutonModifier.setText("Modifier");
+        BoutonModifier.setEnabled(false);
 
         BoutonSupprimer.setText("Supprimer");
         BoutonSupprimer.setEnabled(false);
+        BoutonSupprimer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BoutonSupprimerActionPerformed(evt);
+            }
+        });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        ListImpressionPlanifiees.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        ListImpressionPlanifiees.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                ListImpressionPlanifieesValueChanged(evt);
+            }
+        });
+        jScrollPane1.setViewportView(ListImpressionPlanifiees);
 
         javax.swing.GroupLayout PanelPlanificationLayout = new javax.swing.GroupLayout(PanelPlanification);
         PanelPlanification.setLayout(PanelPlanificationLayout);
@@ -258,13 +285,13 @@ public class Exercice2 extends javax.swing.JFrame {
                 .addGap(145, 145, 145)
                 .addComponent(BoutonAjouter)
                 .addGap(18, 18, 18)
-                .addComponent(BouonModifier)
+                .addComponent(BoutonModifier)
                 .addGap(18, 18, 18)
                 .addComponent(BoutonSupprimer)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(PanelPlanificationLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2)
+                .addComponent(jScrollPane1)
                 .addContainerGap())
         );
         PanelPlanificationLayout.setVerticalGroup(
@@ -273,18 +300,18 @@ public class Exercice2 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(PanelPlanificationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BoutonAjouter)
-                    .addComponent(BouonModifier)
+                    .addComponent(BoutonModifier)
                     .addComponent(BoutonSupprimer))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        PanelPrix.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(null), "Prix des impressions planifiées"));
+        PanelPrix.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Prix des impressions planifiées"));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        TestFieldPrix.setEditable(false);
+        TestFieldPrix.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                TestFieldPrixActionPerformed(evt);
             }
         });
 
@@ -294,14 +321,14 @@ public class Exercice2 extends javax.swing.JFrame {
             PanelPrixLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelPrixLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTextField1)
+                .addComponent(TestFieldPrix)
                 .addContainerGap())
         );
         PanelPrixLayout.setVerticalGroup(
             PanelPrixLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelPrixLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TestFieldPrix, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
@@ -313,10 +340,10 @@ public class Exercice2 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(PanelFichier, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(PanelOptions, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(PanelFichier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PanelOptions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(PanelPlanification, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(PanelPrix, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -332,7 +359,7 @@ public class Exercice2 extends javax.swing.JFrame {
                 .addComponent(PanelPlanification, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PanelPrix, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         pack();
@@ -340,31 +367,95 @@ public class Exercice2 extends javax.swing.JFrame {
 
     private void BoutonParcourirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonParcourirActionPerformed
         // TODO add your handling code here:
+        int resultat=FileChooser.showOpenDialog(this);
+        if (resultat==0){
+            TextAreaNomFichier.append(FileChooser.getSelectedFile().getName());
+        }
     }//GEN-LAST:event_BoutonParcourirActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void CheckBoxRectoVersoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckBoxRectoVersoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_CheckBoxRectoVersoActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void ComboBoxFormatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxFormatActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_ComboBoxFormatActionPerformed
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void RadioBoutonNoirBlancActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioBoutonNoirBlancActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+        if (RadioBoutonCouleur.isSelected()){
+            RadioBoutonCouleur.setSelected(false);
+        }
+        RadioBoutonNoirBlanc.setSelected(true); 
+    }//GEN-LAST:event_RadioBoutonNoirBlancActionPerformed
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+    private void ComboBoxQualiteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxQualiteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+        String qualite=evt.getActionCommand().toString();
+    }//GEN-LAST:event_ComboBoxQualiteActionPerformed
 
     private void BoutonAjouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonAjouterActionPerformed
         // TODO add your handling code here:
+            ListModel<String> listeModel=ListImpressionPlanifiees.getModel();
+            String listeModelModifiee[]=new String[listeModel.getSize()+1];
+            ListModel<String> listeModelFinale;
+            for (int i=0;i<listeModel.getSize();i++){
+                listeModelModifiee[i]=listeModel.getElementAt(i);
+            }
+            listeModelModifiee[listeModelModifiee.length-1]=FileChooser.getSelectedFile().getName()
+                    +"quantity"
+                    +"recto"
+                    +"couleur"
+                    +"qualite";
+            ListImpressionPlanifiees.setListData(listeModelModifiee);
+            TextAreaNomFichier.removeAll();
+            TextAreaNomFichier.setText("");
     }//GEN-LAST:event_BoutonAjouterActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void TestFieldPrixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TestFieldPrixActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_TestFieldPrixActionPerformed
+
+    private void RadioBoutonCouleurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioBoutonCouleurActionPerformed
+        // TODO add your handling code here:
+        if (RadioBoutonNoirBlanc.isSelected()){
+            RadioBoutonNoirBlanc.setSelected(false);
+        }
+        RadioBoutonCouleur.setSelected(true);
+    }//GEN-LAST:event_RadioBoutonCouleurActionPerformed
+
+    private void ListImpressionPlanifieesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_ListImpressionPlanifieesValueChanged
+        // TODO add your handling code here:
+        BoutonModifier.setEnabled(true);
+        BoutonSupprimer.setEnabled(true);
+    }//GEN-LAST:event_ListImpressionPlanifieesValueChanged
+
+    private void SpinnerNombreCopiesStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_SpinnerNombreCopiesStateChanged
+        // TODO add your handling code here:
+        BoutonAjouter.setEnabled(true);
+    }//GEN-LAST:event_SpinnerNombreCopiesStateChanged
+
+    private void BoutonSupprimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonSupprimerActionPerformed
+        // TODO add your handling code here:
+        ListModel<String> listeModel=ListImpressionPlanifiees.getModel();
+        String listeModelModifiee[]=new String[listeModel.getSize()+1];
+        ListModel<String> listeModelFinale;
+        int j=ListImpressionPlanifiees.getSelectedIndex();
+        for (int i=0;i<listeModel.getSize();i++){
+            if (i!=j){
+                listeModelModifiee[i]=listeModel.getElementAt(i);
+            }
+        }
+        ListImpressionPlanifiees.setListData(listeModelModifiee);
+        
+        RadioBoutonNoirBlanc.setSelected(false);
+        RadioBoutonCouleur.setSelected(false);
+        ComboBoxFormat.setSelectedIndex(0);
+        ComboBoxQualite.setSelectedIndex(0);
+        SpinnerNombreCopies.setValue(0);
+        CheckBoxRectoVerso.setSelected(false);
+        
+    }//GEN-LAST:event_BoutonSupprimerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -402,30 +493,31 @@ public class Exercice2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BouonModifier;
     private javax.swing.JButton BoutonAjouter;
+    private javax.swing.JButton BoutonModifier;
     private javax.swing.JButton BoutonParcourir;
     private javax.swing.JButton BoutonSupprimer;
+    private javax.swing.JCheckBox CheckBoxRectoVerso;
+    private javax.swing.JComboBox<String> ComboBoxFormat;
+    private javax.swing.JComboBox<String> ComboBoxQualite;
+    private javax.swing.JFileChooser FileChooser;
     private javax.swing.JLabel LabelFichier;
+    private javax.swing.JLabel LabelFormat;
+    private javax.swing.JLabel LabelNombreCopies;
+    private javax.swing.JLabel LabelQualitéPapier;
+    private javax.swing.JList<String> ListImpressionPlanifiees;
     private javax.swing.JPanel PanelFichier;
+    private javax.swing.JScrollPane PanelNomFichier;
+    private javax.swing.JPanel PanelOptionDroit;
     private javax.swing.JPanel PanelOptions;
+    private javax.swing.JPanel PanelOptionsGauche;
     private javax.swing.JPanel PanelPlanification;
     private javax.swing.JPanel PanelPrix;
+    private javax.swing.JRadioButton RadioBoutonCouleur;
+    private javax.swing.JRadioButton RadioBoutonNoirBlanc;
+    private javax.swing.JSpinner SpinnerNombreCopies;
+    private javax.swing.JTextField TestFieldPrix;
     private javax.swing.JTextArea TextAreaNomFichier;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
